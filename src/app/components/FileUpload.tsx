@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState, useRef } from "react";
 import {
   FaCloudUploadAlt,
@@ -48,11 +49,19 @@ const FileUpload: React.FC = () => {
     }
 
     return (
-      <img
+      // <img
+      //   src={src}
+      //   alt={alt}
+      //   onError={handleImageError}
+      //   className={`object-cover rounded-full ${className}`}
+      // />
+      <Image
         src={src}
         alt={alt}
         onError={handleImageError}
         className={`object-cover rounded-full ${className}`}
+        layout="fill" // This adjusts the image layout
+        objectFit="cover" // Ensures the cover style
       />
     );
   };
